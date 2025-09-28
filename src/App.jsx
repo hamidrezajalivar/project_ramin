@@ -1,4 +1,5 @@
 import './App.css'
+
 // import 'antd/dist/reset.css';
 
 // برای نسخه‌های جدید antd
@@ -6,10 +7,12 @@ import './App.css'
 function App() {
 
 
-  return ( <>
+  return (
+  <>
     <p>hello</p>
-     <h1>test 2 </h1>
-     </>
+    <h1>test 2 </h1>
+    <p>salam</p>
+  </>
   )
 }
 
