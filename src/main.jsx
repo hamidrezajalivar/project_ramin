@@ -1,29 +1,27 @@
-import './index.css'
-
-import App from './App.jsx'
-import { StrictMode } from 'react'
+import React from 'react'
 import { createRoot } from 'react-dom/client'
-import { ConfigProvider } from "antd";
-import faIR from "antd/locale/fa_IR";
-import { ToastContainer, Bounce } from "react-toastify";
+import { BrowserRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { ConfigProvider } from 'antd'
+import store from './store'
+import App from './App'
+
+
+// start MSW in dev
+if (import.meta.env.DEV) {
+const { worker } = await import('./mocks/browser')
+worker.start()
+}
+
+
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-   <ConfigProvider locale={faIR} direction="rtl">
-    <App />
-   </ConfigProvider>
-   <ToastContainer
-            position="bottom-right"
-            autoClose={1000}
-            limit={1}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={true}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="light"
-            transition={Bounce}
-          />
-  </StrictMode>,
+<React.StrictMode>
+<Provider store={store}>
+<BrowserRouter>
+<ConfigProvider>
+<App />
+</ConfigProvider>
+</BrowserRouter>
+</Provider>
+</React.StrictMode>
 )

@@ -1,5 +1,5 @@
 {
-  "name": "ramin_project",
+  "name": "project",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,10 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.9.0",
     "antd": "^5.27.4",
+    "axios": "^1.12.2",
+    "msw": "^2.11.3",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-multi-date-picker": "^4.5.2",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.9.3",
     "react-toastify": "^11.0.5"
   },
   "devDependencies": {
